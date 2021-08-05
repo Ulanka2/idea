@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+idea
+{% endblock %}
+
+
+{% block content %}
+    <center>
+    {% for one_idea in all_idea %}
+    <!-- тут можно использовать range() чтоюы по 3 в лайне -->
+    <div class="card" style="width: 23rem;">
+        <img src="{{one_idea.img}}" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{one_idea.title}}</h5>
+          <p class="card-text">{{one_idea.text}}</p>
+          <a href="#" class="btn btn-primary">Читать полностью</a>
+        </div>    
+    {% endfor %}
+</div></center>
+{% endblock %}
