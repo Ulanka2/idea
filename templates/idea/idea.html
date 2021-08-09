@@ -4,6 +4,7 @@
     <center>
     
     {% for idea in idea %}
+    <p>Авторы Постов !</p>
     {% for tag in author %}
      <a href="{% url 'news_by_tag' tag.id %}" class="btn btn-primary"><h1>{{tag.name}}</h1></a>
     {% endfor %}

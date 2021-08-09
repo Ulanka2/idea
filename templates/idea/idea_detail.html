@@ -11,10 +11,12 @@
     {{idea_detail.text}}
     <br>
     <img src={{idea_detail.img}}>
+    {% if request.user.is_authenticated %}
     <a href="{% url 'idea_edit' pk=idea_detail.pk %}">Редактировать</a>
     <a href="{% url 'idea_delete' pk=idea_detail.pk %}">Удалит </a>
     <br>
     </center>
+    {% endif %}
 {% endblock %}
 
 

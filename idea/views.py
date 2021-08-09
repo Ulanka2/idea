@@ -48,7 +48,7 @@ def idea_delete(request, pk):
 
 def tag_detail_view(request, pk):
     author = get_object_or_404(Author, id=pk)
-    news_by_tag = author.news_set.all()
+    news_by_tag = author.idea_set.all()
     return render(request, 'idea/news_by_tag.html', 
     {'news_by_tag': news_by_tag})
 
