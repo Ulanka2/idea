@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}
+{{idea_detail.title}} <!-- для где 127 00 000 отобразить название новостей -->
+{% endblock %}
+
+{% block content %}
+    <center>
+<h1>Hello World</h1>
+    <font size=6>{{idea_detail.title}}</font>
+    <br>
+    {{idea_detail.text}}
+    <br>
+    <img src={{idea_detail.img}}>
+    <a href="{% url 'idea_edit' pk=idea_detail.pk %}">Редактировать</a>
+    <a href="{% url 'idea_delete' pk=idea_detail.pk %}">Удалит </a>
+    <br>
+    </center>
+{% endblock %}
+
+
+
+
+
+

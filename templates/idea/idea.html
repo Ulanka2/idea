@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <center>
+    
+    {% for idea in idea %}
+    {% for tag in author %}
+     <a href="{% url 'news_by_tag' tag.id %}" class="btn btn-primary"><h1>{{tag.name}}</h1></a>
+    {% endfor %}
+    <!-- тут можно использовать range() чтоюы по 3 в лайне -->
+    <div class="card" style="width: 23rem;">
+        <img src="{{idea.img}}" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{idea.title}}</h5>
+          <p class="card-text">{{idea.text}}</p>
+          <a href="{% url 'idea_detail' pk=idea.pk %}" class="btn btn-primary">Читать полностью</a>
+          
+        </div>    
+    {% endfor %}
+    </center>
+{% endblock %}
+
+
