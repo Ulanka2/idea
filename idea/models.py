@@ -13,9 +13,5 @@ class Idea(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True)
 
-
-
-    
-
     def __str__(self):
         return self.title

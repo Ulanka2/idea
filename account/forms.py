@@ -8,14 +8,6 @@ from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 
 
-# class LoginForm(AuthenticationForm):
-#     def __init__(self, *args, **kwargs):
-#         super(LoginForm, self).__init__(*args, **kwargs)
-#         self.fields['username'].widget = widgets.TextInput(
-#             attrs={'placeholder': "qweer@qwe.com", "class": "form-control"})
-#         self.fields['password'].widget = widgets.PasswordInput(
-#             attrs={'placeholder': "password", "class": "form-control"})
-
 class LoginForm(forms.Form):
     email = forms.EmailField()
     password = forms.CharField(widget=forms.PasswordInput)
